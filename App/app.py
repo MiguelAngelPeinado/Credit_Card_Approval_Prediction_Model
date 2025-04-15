@@ -5,6 +5,7 @@ import joblib
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+import pathlib
 
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import (
@@ -20,9 +21,13 @@ from matplotlib.ticker import FuncFormatter
 
 
 # Load Data
-y_test = joblib.load("y_test.pkl")
-y_pred_xgb = joblib.load("y_pred_xgb.pkl")
-y_pred_smote = joblib.load("y_pred_smote.pkl")
+# Obtener la ruta del archivo actual (app.py)
+file_dir = pathlib.Path(__file__).parent
+
+# Load Data
+y_test = joblib.load(file_dir / "y_test.pkl")
+y_pred_xgb = joblib.load(file_dir / "y_pred_xgb.pkl")
+y_pred_smote = joblib.load(file_dir / "y_pred_smote.pkl")
 
 st.set_page_config(layout="wide")
 
