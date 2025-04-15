@@ -45,15 +45,6 @@ tabs = st.tabs(
 )
 
 
-# --- Cargar datos si es necesario ---
-@st.cache_data
-def load_df_model():
-    file_dir = pathlib.Path(__file__).parent
-    return pd.read_csv(file_dir / "df_model.csv")
-
-
-df_model = load_df_model()
-
 
 # --- TAB 1: OVERVIEW ---
 with tabs[0]:
@@ -83,7 +74,7 @@ with tabs[0]:
     st.markdown("### 🔍 Key Dataset Insights")
 
     # Load dataset
-    df = pd.read_csv("df_model.csv")
+    df = pd.read_csv(file_dir / "df_model.csv")
 
     # Definir formateador justo aquí (antes de col1, col2, col3)
     hundred_k_formatter = FuncFormatter(lambda x, _: f"{int(x/1_000):,}K")
