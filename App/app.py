@@ -32,7 +32,11 @@ y_pred_smote = joblib.load(file_dir / "y_pred_smote.pkl")
 st.set_page_config(layout="wide")
 
 # 👉 TÍTULO GLOBAL DEL DASHBOARD
-st.title("Credit Card Approval – Project Overview")
+st.markdown(
+    "<h1 style='display: flex; align-items: center;'>💳&nbsp;Credit Card Approval – Project Overview</h1>",
+    unsafe_allow_html=True
+)
+
 
 # Tabs
 tabs = st.tabs(
@@ -43,7 +47,6 @@ tabs = st.tabs(
         "About",
     ]
 )
-
 
 
 # --- TAB 1: OVERVIEW ---
