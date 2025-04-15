@@ -48,15 +48,12 @@ tabs = st.tabs(
 # --- Cargar datos si es necesario ---
 @st.cache_data
 def load_df_model():
-    return pd.read_csv("df_model.csv")
+    file_dir = pathlib.Path(__file__).parent
+    return pd.read_csv(file_dir / "df_model.csv")
 
 
 df_model = load_df_model()
 
-# --- Ruta correcta y segura para imágenes ---
-import pathlib
-
-image_dir = pathlib.Path(__file__).parent / "Images"
 
 # --- TAB 1: OVERVIEW ---
 with tabs[0]:
