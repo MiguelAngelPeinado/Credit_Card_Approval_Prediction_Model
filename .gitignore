@@ -1,0 +1,17 @@
+### 🧹 `.gitignore`
+
+```gitignore
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+
+# VSCode or IDE config
+.vscode/
+.idea/
+
